@@ -1,0 +1,16 @@
+import time 
+
+aRandomList = [1, 2, 2, 5, 7, 10, 5, 2, 2, 2, 3, 2, 2]
+
+cubingCache = {}
+def cubingNumsWithMemo(aList):
+	for i in aList:
+		if i in cubingCache:
+			print(cubingCache[i])
+		
+		else:
+			time.sleep(0.5)
+			cubingCache[i] = i**3
+			print(cubingCache[i])
+
+cubingNumsWithMemo(aRandomList)
