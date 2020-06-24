@@ -1,0 +1,12 @@
+fibonacciCache = {}
+def fibonacciSequenceWithMemo(n):
+	if n <= 0:
+		return 0
+	elif n == 1:
+		return 1
+	elif n not in fibonacciCache:
+		fibonacciCache[n] = fibonacciSequenceWithMemo(n-1) + fibonacciSequenceWithMemo(n-2)
+	
+	return fibonacciCache[n]
+
+print(fibonacciSequenceWithMemo(100))
