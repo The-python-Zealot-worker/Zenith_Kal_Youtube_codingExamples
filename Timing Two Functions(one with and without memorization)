@@ -1,0 +1,21 @@
+import random
+
+def cubingRandNumbersWithoutMemo():
+	ourIndex = 1
+	while ourIndex < 27:
+		randomNumber = random.randrange(1, 1000)
+		print(randomNumber**3)
+		
+		ourIndex += 1
+
+
+cubingCache = {}
+def cubingRandNumbersWithMemo():
+	ourIndex = 1
+	while ourIndex < 27:
+		randomNumber = random.randrange(1, 1000)
+		if randomNumber in cubingCache:
+			print(cubingCache[randomNumber])
+		else:
+			cubingCache[randomNumber] = randomNumber**3
+			print(cubingCache[randomNumber])
